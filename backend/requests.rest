@@ -1,0 +1,41 @@
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "name":"kingsman",
+    "password":"123"
+}
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "name":"kingsman",
+    "password":"123"
+}
+
+###
+
+GET http://localhost:5000/blogs/user-blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2luZ3NtYW4iLCJpYXQiOjE3MDYyODQwMzR9.BzJfGPmb18jq_cZb9x3cGDPjfRX48ZUvHv_Ei5Efly4
+
+###
+
+GET http://localhost:5000/blogs HTTP/1.1
+
+###
+
+GET http://localhost:5000/blogs/65b3cefa8772338d87818c7d HTTP/1.1
+
+
+###
+POST http://localhost:5000/blogs/create
+Content-Type: application/json
+
+{
+    "title": "Life is a big fat Lie!",
+            "author": "Indhra",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget nullam non nisi est sit. Sed id semper risus in hendrerit gravida rutrum. Dignissim convallis aenean et tortor at risus viverra adipiscing at. Viverra accumsan in nisl nisi scelerisque eu. Tempus quam pellentesque nec nam. Eget mi proin sed libero enim. Nulla facilisi morbi tempus iaculis urna id volutpat. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Vitae et leo duis ut diam quam nulla porttitor massa. Consequat id porta nibh venenatis cras sed felis. Tempus quam pellentesque nec nam aliquam sem et. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. Facilisis leo vel fringilla est. Leo a diam sollicitudin tempor id eu nisl. Nulla facilisi morbi tempus iaculis urna id. Consequat interdum varius sit amet mattis vulputate enim. Diam quam nulla porttitor massa. Volutpat sed cras ornare arcu dui vivamus. Lectus proin nibh nisl condimentum. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Tincidunt ornare massa eget egestas purus viverra accumsan in. Vitae proin sagittis nisl rhoncus mattis. Aliquet lectus proin nibh nisl condimentum id venenatis."
+}
