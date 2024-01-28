@@ -10,9 +10,9 @@ const Blogdetails = () => {
     const { id } = useParams();
     const { accessToken } = useContext(AuthContext)
     const navigate = useNavigate()
-    const { data: blog, isPending, isError } = useFetch(`/api/blogs/` + id)
+    const { data: blog, isPending, isError } = useFetch(`${import.meta.env.VITE_PROXY}/api/blogs/` + id)
     const handleDelete = async () => {
-        const res = await axios.delete(`/api/blogs/delete/${id}`, {
+        const res = await axios.delete(`${import.meta.env.VITE_PROXY}/api/blogs/delete/${id}`, {
             headers: {
                 Authorization: `BEARER ${accessToken}`
             }

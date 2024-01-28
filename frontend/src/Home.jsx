@@ -1,7 +1,7 @@
 import Bloglist from "./Bloglist";
 import useFetch from "./useFetch";
 const Home = () => {
-    const { data: blogs, isPending, isError} = useFetch("/api/blogs")
+    const { data: blogs, isPending, isError} = useFetch(`${import.meta.env.VITE_PROXY}/api/blogs`)
     return (
         <div>
             {

@@ -12,7 +12,7 @@ export default function Login() {
     const loginUser = async (user) => {
         try {
             setIsLoading(true)
-            const res = await axios.post("/api/login", user)
+            const res = await axios.post(`${import.meta.env.VITE_PROXY}/api/login`, user)
             if (res.data.token) {
                 sessionStorage.setItem("token", res.data.token)
                 setAccessToken(res.data.token)

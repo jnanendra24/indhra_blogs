@@ -12,7 +12,7 @@ const Newblog = () => {
         event.preventDefault()
         const newBlog = {title: formData.title,content: formData.content}
         try{
-        const res = await axios.post("/api/blogs/create",newBlog,{
+        const res = await axios.post(`${import.meta.env.VITE_PROXY}/api/blogs/create`,newBlog,{
             headers:{
                 Authorization: `BEARER ${accessToken}`
             }

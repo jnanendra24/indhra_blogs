@@ -8,7 +8,7 @@ export default function Userblogs() {
     const {accessToken} = useContext(AuthContext)
     const fetchUserBlogs = async ()=>{
         try{
-            const res = await axios.get("/api/blogs/user-blogs",{
+            const res = await axios.get(`${import.meta.env.VITE_PROXY}/api/blogs/user-blogs`,{
                 headers:{
                     Authorization: `BEARER ${accessToken}`
                 }

@@ -12,7 +12,7 @@ export default function Register() {
   const registerUser = async (user) => {
     try {
       setIsLoading(true)
-      const res = await axios.post("/api/register", user)
+      const res = await axios.post(`${import.meta.env.VITE_PROXY}/api/register`, user)
       setIsLoading(false)
       if (res.status === 201) {
         alert("user successfully created")
