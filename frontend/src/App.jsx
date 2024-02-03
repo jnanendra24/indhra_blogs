@@ -13,9 +13,10 @@ function App() {
   const [accessToken, setAccessToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [user, setUser] = useState("")
   return (
     <Router>
-      <AuthContext.Provider value={{ accessToken,setAccessToken,isAuthenticated, isLoading, setIsAuthenticated,setIsLoading }}>
+      <AuthContext.Provider value={{ accessToken,setAccessToken,isAuthenticated, isLoading, setIsAuthenticated,setIsLoading, user, setUser }}>
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />

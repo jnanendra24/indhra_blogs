@@ -98,7 +98,7 @@ app.post("/api/login", async (req, res) => {
         }
         if (await bcrypt.compare(req.body.password, user.password)) {
             const token = await generateToken(user.name)
-            res.status(200).json({ "token": token })
+            res.status(200).json({"username":user.name, "token": token })
         }
         else {
             return res.status(401).send("Invalid credentials")

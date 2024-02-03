@@ -7,7 +7,7 @@ import { AuthContext } from "./contexts/AuthContext";
 export default function Login() {
     const usernameref = useRef("")
     const passwordref = useRef("")
-    const { setAccessToken,isAuthenticated , setIsAuthenticated , isLoading, setIsLoading} = useContext(AuthContext);
+    const { setAccessToken,isAuthenticated , setIsAuthenticated , isLoading, setIsLoading, setUser} = useContext(AuthContext);
     const navigate = useNavigate()
     const loginUser = async (user) => {
         try {
@@ -16,6 +16,7 @@ export default function Login() {
             if (res.data.token) {
                 sessionStorage.setItem("token", res.data.token)
                 setAccessToken(res.data.token)
+                setUser(res.data.username)
                 setIsLoading(false)
                 setIsAuthenticated(true)
                 navigate("/")

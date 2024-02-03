@@ -8,7 +8,7 @@ import { AuthContext } from "./contexts/AuthContext";
 
 const Blogdetails = () => {
     const { id } = useParams();
-    const { accessToken } = useContext(AuthContext)
+    const { accessToken, user } = useContext(AuthContext)
     const navigate = useNavigate()
     const { data: blog, isPending, isError } = useFetch(`${import.meta.env.VITE_PROXY}/api/blogs/` + id)
     const handleDelete = async () => {
@@ -33,8 +33,8 @@ const Blogdetails = () => {
                     </div>
                     <hr></hr>
                     <p className="mt-2 text-justify">{blog.content}</p>
-                    <button className="border-2 p-2 bg-blue-500 text-white mt-4 rounded-lg hover:bg-blue-400" onClick={handleDelete}><FaTrash />
-                    </button>
+                   {user.toLowerCase() === blog.author.toLowerCase() && <button className="border-2 p-2 bg-blue-500 text-white mt-4 rounded-lg hover:bg-blue-400" onClick={handleDelete}><FaTrash />
+                    </button>}
                 </div>))
             }
         </div>

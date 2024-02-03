@@ -3,7 +3,7 @@ import { AuthContext } from "./contexts/AuthContext";
 import { useContext,useEffect } from "react";
 
 const Navbar = () => {
-    const { isAuthenticated,setIsAuthenticated, setAccessToken } = useContext(AuthContext)
+    const { isAuthenticated,setIsAuthenticated, setAccessToken, setUser } = useContext(AuthContext)
     const navigate = useNavigate()
     useEffect(() => {
         const storedToken = sessionStorage.getItem("token");
@@ -16,6 +16,8 @@ const Navbar = () => {
     }, [isAuthenticated])
     const handleLogOut = () => {
         sessionStorage.removeItem("token")
+        setAccessToken(null)
+        setUser("")
         setIsAuthenticated(false)
     }
     return (
