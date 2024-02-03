@@ -24,6 +24,9 @@ function authToken(req, res, next) {
     })
 }
 //routes
+app.get("/",(req, res)=>{
+    res.json({message: "alive"});
+})
 app.get("/api/blogs", async (req, res) => {
     const blogs = await Blog.find({}).sort({ createdAt: -1 })
     res.json(blogs)
